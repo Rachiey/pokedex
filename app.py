@@ -40,6 +40,10 @@ CORS(app, resources={r'/*': {'origins': '*'}})
 def ping_pong():
     return jsonify('pong!')
 
+@app.route('/')
+def home():
+    return jsonify({'message': 'Hello from the Pokedex!'}), 200
+
 
 def remove_pokemon(pokemon_id):
     for pokemon in POKEMONS:
